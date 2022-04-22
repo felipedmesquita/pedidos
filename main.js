@@ -46,10 +46,11 @@ async function getID() {
     Cliente desde: ${dataCliente}
     </p>
     </tr>`
-
+    var c = 0;
     for (p of pedidos) {
         itens = p.pedido.itens;
-        for(i of itens){
+        console.log(c++)
+        for (i of itens) {
 
             const num = p.pedido.numero;
             const item = i.item.descricao;
@@ -58,8 +59,9 @@ async function getID() {
             const loja = p.pedido.loja;
             const data = p.pedido.data;
             const sit = p.pedido.situacao;
-        
-            const nomeloja = lojas.find(l => l.id == loja).nomeLoja;
+            console.log(loja, item)
+            const nomeloja = lojas.find(l => l.id == loja)?.nomeLoja || "SEM LOJA";
+
 
             template_tailwind = `<tr>
             <td class="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-gray-500 sm:pl-6">${num}</td>
@@ -74,8 +76,12 @@ async function getID() {
             tabela.insertAdjacentHTML('beforeend', template_tailwind);
         }
 
-        
+
     }
     titulo.insertAdjacentHTML('beforeend', template_titulo);
+    console.log(titulo)
+    console.log("sarah")
+
 }
+
 getID();
