@@ -31,7 +31,7 @@ async function getID() {
 
     template_titulo = `<tr>
     <br>
-    <h1 class="text-xl font-semibold text-gray-900">PEDIDOS DO CLIENTE ${nomeCliente} </h1>
+    <h1 class="text-xl font-semibold text-gray-900">PEDIDOS DO CLIENTE ${nomeCliente.toUpperCase()} </h1>
     <p class="mt-2 text-sm text-gray-700">
     CPF/CNPJ: ${cpfcnpj}
     <br>
