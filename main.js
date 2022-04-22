@@ -25,11 +25,12 @@ async function getID() {
             const item = i.item.descricao;
             const qtd = i.item.quantidade;
             const preco = i.item.valorunidade;
+            const loja = p.pedido.loja;
             const cep = p.pedido.cliente.cep;
             const data = p.pedido.data;
             const sit = p.pedido.situacao;
         
-            const nomeloja = lojas.find(l => l.id == "203234101").nomeLoja;
+            const nomeloja = lojas.find(l => l.id == loja).nomeLoja;
 
             template_tailwind = `<tr>
             <td class="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-gray-500 sm:pl-6">${num}</td>
