@@ -3,7 +3,7 @@ async function getID() {
     const params = new URLSearchParams(window.location.search)
     key = params.get('key')
     const cpf = prompt("Insira o CPF ou CNPJ ");
-    res = await fetch(`https://bling.servidorjulia.workers.dev/Api/v2/contato/${cpf}/json?apikey=${key}`);
+    res = await fetch(`https://bling.servidorjulia.workers.dev/Api/v2/contato/${cpf.replaceAll(/\D/g, "")}/json?apikey=${key}`);
     json1 = await res.json();
 
     const id = json1.retorno.contatos[0].contato.id;
