@@ -59,6 +59,7 @@ async function getID() {
             const loja = p.pedido.loja;
             const data = p.pedido.data;
             const sit = p.pedido.situacao;
+            if(sit == "Cancelado") continue;
             console.log(loja, item)
             const nomeloja = lojas.find(l => l.id == loja)?.nomeLoja || "SEM LOJA";
 
