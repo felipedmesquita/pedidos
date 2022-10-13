@@ -74,7 +74,7 @@ async function getID() {
             <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">${sit}</td>
             </tr>`
 
-            tabela.insertAdjacentHTML('beforeend', template_tailwind);
+            tabela.insertAdjacentHTML('afterbegin', template_tailwind);
         }
 
 
