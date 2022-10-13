@@ -59,6 +59,7 @@ async function getID() {
             const loja = p.pedido.loja;
             const data = p.pedido.data;
             const sit = p.pedido.situacao;
+            if(sit == "Cancelado") continue;
             console.log(loja, item)
             const nomeloja = lojas.find(l => l.id == loja)?.nomeLoja || "SEM LOJA";
 
@@ -73,7 +74,7 @@ async function getID() {
             <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500">${sit}</td>
             </tr>`
 
-            tabela.insertAdjacentHTML('beforeend', template_tailwind);
+            tabela.insertAdjacentHTML('afterbegin', template_tailwind);
         }
 
 
